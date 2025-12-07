@@ -1,11 +1,19 @@
+import { WeatherContext } from "../components/WeatherContext";
+import { useContext } from "react";
 import CityInpuits from "../components/CityInputs";
+import CurrencyCard from "../components/CurrencyCard";
 
 export default function Currency() {
+    const { originCity, currentCity } = useContext(WeatherContext);
     return (
         <>
             <div className="app-main">
                 <h2>💱 Currency Exchange</h2>
-                <CityInpuits></CityInpuits>
+                <CityInpuits />
+                <div className="weather-grid">
+                    <CurrencyCard cityName={originCity} title={"Origin City"} />
+                    <CurrencyCard cityName={currentCity} title={"Current City"}/>
+                </div>
             </div>
         </>
     );
