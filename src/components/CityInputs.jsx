@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { WeatherContext } from "./WeatherContext";
 
-export function CityInpuits({}) {
+export default function CityInpuits() {
     const { originCity, setOriginCity, currentCity, setCurrentCity } =
         useContext(WeatherContext);
 
@@ -16,6 +16,7 @@ export function CityInpuits({}) {
                         className="city-input"
                         placeholder="Enter origin city"
                         value={originCity}
+                        onChange={(e) => setOriginCity(e.target.value)}
                     />
                 </div>
                 <div className="input-group ">
@@ -26,6 +27,7 @@ export function CityInpuits({}) {
                         className="city-input"
                         placeholder="Enter current city"
                         value={currentCity}
+                        onChange={(e) => setCurrentCity(e.target.value)}
                     />
                 </div>
             </div>
