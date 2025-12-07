@@ -2,8 +2,8 @@ import { useState } from "react";
 import { WeatherContext } from "./WeatherContext";
 
 export function WeatherProvider({ children }) {
-    const [originCity, setOriginCity] = useState("");
-    const [currentCity, setCurrentCity] = useState("");
+    const [originCity, setOriginCity] = useState("Vancouver");
+    const [currentCity, setCurrentCity] = useState("New York");
 
     return (
         <WeatherContext.Provider
