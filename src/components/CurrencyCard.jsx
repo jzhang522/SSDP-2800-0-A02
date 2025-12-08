@@ -93,7 +93,7 @@ export default function CurrencyCard({ cityName, otherCityName, title }) {
                 <div className="temperature">
                     <p className="temp-value">
                         {getCurrencySymbol(currencyData?.target_code) ?? "_"}
-                        {currencyData?.conversion_result ?? "0.00"}
+                        {currencyData?.conversion_result.toFixed(2) ?? "0.00"}
                     </p>
                     <p className="description">
                         {currencyData?.target_code ?? "_"}
