@@ -11,8 +11,8 @@ export default function Currency() {
                 <h2>💱 Currency Exchange</h2>
                 <CityInpuits />
                 <div className="weather-grid">
-                    <CurrencyCard cityName={originCity} title={"Origin City"} />
-                    <CurrencyCard cityName={currentCity} title={"Current City"}/>
+                    <CurrencyCard cityName={originCity} otherCityName={currentCity} title={"Origin City"} />
+                    <CurrencyCard cityName={currentCity} otherCityName={originCity} title={"Current City"}/>
                 </div>
             </div>
         </>
