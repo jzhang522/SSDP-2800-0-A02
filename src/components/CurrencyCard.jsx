@@ -16,6 +16,8 @@ export default function CurrencyCard({ cityName, otherCityName, title }) {
             return;
         }
 
+        let isMounted = true;
+
         const fetchCurrency = async () => {
             setLoading(true);
             setError(null);
@@ -50,22 +52,36 @@ export default function CurrencyCard({ cityName, otherCityName, title }) {
                 if (!result.ok)
                     throw new Error("Currency exchange info not found.");
                 const data = await result.json();
-                console.log(data);
 
-                setCurrencyData(data);
-                setLoading(false);
+                if (isMounted) {
+                    setCurrencyData(data);
+                    setLoading(false);
+                }
             } catch (ex) {
-                setError(ex.message);
-                setCurrencyData(null);
-                setLoading(false);
+                if (isMounted) {
+                    setError(ex.message);
+                    setCurrencyData(null);
+                    setLoading(false);
+                }
             }
         };
 
         fetchCurrency();
+
+        return () => {
+            isMounted = false;
+        };
     }, [cityName, otherCityName, weatherApiKey, currencyApiKey]);
 
-    if (loading) return <div className="weather-card loading">Loading...</div>;
+    if (loading)
+        return <div className="weather-card loading">Loading weather...</div>;
     if (error) return <div className="weather-card error">Error: {error}</div>;
+    if (!currencyData)
+        return (
+            <div className="weather-card placeholder">
+                Enter a city name to search
+            </div>
+        );
 
     return (
         <>
