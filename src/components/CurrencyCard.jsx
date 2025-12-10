@@ -12,7 +12,7 @@ export default function CurrencyCard({ cityName, otherCityName, title }) {
     const currencyApiKey = import.meta.env.VITE_EXCHANGERATE_API_KEY;
 
     useEffect(() => {
-        if (!cityName.trim()) {
+        if (!cityName.trim() && !otherCityName.trim()) {
             return;
         }
 
