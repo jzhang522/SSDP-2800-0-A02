@@ -3,10 +3,11 @@ import Navigation from './Navigation';
 
 function Header() {
     return (
-        <header>
+        <header className="app-header">
             <div>
                 <img src={mylogo} alt="Logo" />
-                <h1>WEATHER SITE NAME TO FOLLOW</h1>
+                <h1>Weather Comparison</h1>
+                <p> Compare weather between two cities</p>
             </div>
             <Navigation />
         </header>
