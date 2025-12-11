@@ -3,15 +3,15 @@ import { WeatherProvider } from "./components/WeatherProvider";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Currency from "./pages/Currency";
+import Header from './components/Header';
+import Footer from './components/Footer';
 import "./App.css";
 
 function App() {
     return (
         <WeatherProvider>
             <div className="app-container"> 
-                <div className="app-header">
-                    <h1>🌤️ Weather App</h1>
-                </div>
+                <Header />
                 <nav>
                     <Link to="/">Weather</Link>
                     <Link to="/currency">Currency Exchange</Link>
@@ -24,6 +24,7 @@ function App() {
                     <Route path="/about" element={<About />}></Route>
                 </Routes>
             </div>
+            <Footer />
         </WeatherProvider>
     );
 }
