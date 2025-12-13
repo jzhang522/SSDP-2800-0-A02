@@ -12,16 +12,16 @@ function App() {
         <WeatherProvider>
             <div className="app-container"> 
                 <Header />
-                <nav>
+                {/* <nav>
                     <Link to="/">Weather</Link>
                     <Link to="/currency">Currency Exchange</Link>
                     <Link to="/about">About</Link>
-                </nav>
+                </nav> */}
 
                 <Routes>
                     <Route path="/" element={<Home />}></Route>
-                    <Route path="/currency" element={<Currency />}></Route>
-                    <Route path="/about" element={<About />}></Route>
+                    {/* <Route path="/currency" element={<Currency />}></Route>
+                    <Route path="/about" element={<About />}></Route> */}
                 </Routes>
             </div>
             <Footer />

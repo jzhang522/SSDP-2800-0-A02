@@ -1,10 +1,8 @@
 function Header() {
     return (
         <header className="app-header">
-            <div>
-                {/* <img src={mylogo} alt="Logo" /> */}
-                <h1>Weather Comparison</h1>
-            </div>
+            <h1>🌤️ Weather Comparison</h1>
+            <p className="">Compare weather between your origin city and current location</p>
         </header>
     );
 }

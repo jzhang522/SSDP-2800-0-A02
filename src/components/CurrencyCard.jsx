@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import.meta.env.VITE_WEATHER_API_KEY;
 import { countries, currencies } from "country-data";
 
 export default function CurrencyCard({ cityName, otherCityName, title }) {
@@ -74,7 +73,7 @@ export default function CurrencyCard({ cityName, otherCityName, title }) {
     }, [cityName, otherCityName, weatherApiKey, currencyApiKey]);
 
     if (loading)
-        return <div className="weather-card loading">Loading weather...</div>;
+        return <div className="weather-card loading">Loading Currency Exchange Info...</div>;
     if (error) return <div className="weather-card error">Error: {error}</div>;
     if (!currencyData)
         return (
