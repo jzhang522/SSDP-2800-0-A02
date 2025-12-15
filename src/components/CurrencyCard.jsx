@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { countries, currencies } from "country-data";
 
 export default function CurrencyCard({ cityName, otherCityName, title }) {
-    // const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [countryCode, setCountryCode] = useState(null);
@@ -131,7 +130,7 @@ async function getCountryCode(cityName, key) {
 function getCurrencyCode(countryCode) {
     const country = countries[countryCode];
 
-    if (!country || !country.currencies || country.currencies.length === 0) {
+    if (!country || !country.currencies || country.currencies.length == 0) {
         return null;
     }
 

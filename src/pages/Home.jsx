@@ -8,6 +8,7 @@ export default function Currency() {
     return (
         <>
             <div className="app-main">
+                <h2>🌤️Weather Comparison</h2>
                 <CityInpuits />
                 <div className="weather-grid">
                     <WeatherCard cityName={originCity} title={"Origin City"} />
