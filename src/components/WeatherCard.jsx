@@ -6,8 +6,11 @@ export default function WeatherCard({ cityName, title }) {
     const [weatherData, setWeatherData] = useState(null);
     const weatherApiKey = import.meta.env.VITE_WEATHER_API_KEY;
 
-    useEffect(() => {
+    useEffect(() => { 
         if (!cityName.trim()) {
+            setError(null);
+            setWeatherData(null);
+            setLoading(false);
             return;
         }
 

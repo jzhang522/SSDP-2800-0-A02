@@ -192,16 +192,20 @@ nav a:hover {
 }
 
 .app-footer {
-  position: fixed;
+  /* position: fixed; */
   left: 0;
   right: 0;
   bottom: 0;
   text-align: center;
   padding: 1rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
   border-top: 1px solid var(--card-bg);
   color: var(--text-muted);
   font-size: 0.9rem;
+}
+
+.about {
+  margin-bottom: 6.5vh;
 }
 
 @media (max-width: 768px) {

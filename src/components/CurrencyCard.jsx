@@ -10,11 +10,21 @@ export default function CurrencyCard({ cityName, otherCityName, title }) {
     const currencyApiKey = import.meta.env.VITE_EXCHANGERATE_API_KEY;
 
     useEffect(() => {
-        if (!cityName.trim() && !otherCityName.trim()) {
+        if ((!otherCityName.trim() && !cityName.trim()) || (!cityName.trim() && otherCityName.trim())){
+            setCurrencyData(null);
+            setError(null);
+            setLoading(false);
+            return
+        }
+        else if ((!otherCityName.trim() && cityName.trim()) ) {
+            setLoading(false);
+            setCurrencyData(null);
+            setError("Please Enter Both fields.");
             return;
         }
 
         let isMounted = true;
+
 
         const fetchCurrency = async () => {
             setLoading(true);
@@ -31,7 +41,7 @@ export default function CurrencyCard({ cityName, otherCityName, title }) {
                 );
 
                 if (!currentCountryCode || !otherCountryCode) {
-                    throw new Error("Country not found!");
+                    throw new Error("Please ensure both countrys are valid.");
                 }
 
                 setCountryCode(currentCountryCode);
